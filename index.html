@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PITAGORA INTERVIEW</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Fira GO', sans-serif; background-color: #f0f2f5; color: #1a1a1a; padding: 15px; }
+        .container { max-width: 500px; margin: 0 auto; background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header { background: #000; color: white; padding: 40px 20px; text-align: center; }
+        .logo { font-size: 26px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+        .form-content { padding: 30px 20px; }
+        .input-group { margin-bottom: 25px; }
+        label { display: block; font-size: 12px; font-weight: 700; color: #777; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; }
+        input[type="text"], textarea {
+            width: 100%; padding: 16px; border: 2px solid #f0f0f0; border-radius: 15px; font-size: 16px; 
+            font-family: 'Fira GO', sans-serif; background: #fdfdfd; transition: all 0.3s;
+        }
+        input:focus, textarea:focus { border-color: #000; background: #fff; outline: none; }
+        textarea { min-height: 110px; resize: none; }
+        
+        .submit-btn { 
+            width: 100%; padding: 22px; background: #000; color: #fff; border: none; 
+            border-radius: 18px; font-size: 16px; font-weight: 700; cursor: pointer; 
+            text-transform: uppercase; letter-spacing: 2px; margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .submit-btn:active { transform: scale(0.98); }
+        
+        .section-divider { 
+            margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #eee;
+            font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">PITAGORA</div>
+        <p style="font-size: 10px; opacity: 0.5; margin-top: 5px; letter-spacing: 2px;">INTERVIEW FORM</p>
+    </div>
+
+    <form action="https://script.google.com/macros/s/AKfycbyJtEi30LrAp3oy6LHZa7gmOVRbmesCR62RtKlaFWL4jCvB2pGLfySXVrvQaGLb3LtsmQ/exec" method="POST" id="mainForm">
+        <div class="form-content">
+            
+            <div class="input-group">
+                <label>ავტორი & ბრენდი</label>
+                <input type="text" name="სახელი_ბრენდი" required placeholder="მაგ: ნინო • Handmade">
+            </div>
+
+            <div class="input-group">
+                <label>ზოგადი ისტორია</label>
+                <textarea name="მთავარი_ისტორია" placeholder="მოგვიყევით მოკლედ თქვენს შესახებ..."></textarea>
+            </div>
+
+            <div class="section-divider">კითხვების სერია</div>
+
+            <div class="input-group">
+                <label>როგორ გაჩნდა იდეა?</label>
+                <textarea name="Q1"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>მოგვიყევით პირველ ნაბიჯებზე</label>
+                <textarea name="Q2"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>რა პროდუქციას სთავაზობთ მომხმარებელს?</label>
+                <textarea name="Q3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>წარსულში თუ გქონდათ გამოცდილება?</label>
+                <textarea name="Q4"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>რა გამოწვევების წინაშე დგახართ?</label>
+                <textarea name="Q5"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="sbtn">ინტერვიუს დასრულება 🚀</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // მხოლოდ ვიზუალური ეფექტისთვის, რომ მიხვდნენ, რომ გაიგზავნა
+    document.getElementById('mainForm').onsubmit = function() {
+        document.getElementById('sbtn').innerText = "იგზავნება... ✅";
+        document.getElementById('sbtn').style.background = "#333";
+    };
+</script>
+
+</body>
+</html>
