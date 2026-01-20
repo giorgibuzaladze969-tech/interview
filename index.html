@@ -3,97 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PITAGORA INTERVIEW</title>
+    <title>PITAGORA - ინტერვიუ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;700&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Fira GO', sans-serif; background-color: #f0f2f5; color: #1a1a1a; padding: 15px; }
-        .container { max-width: 500px; margin: 0 auto; background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .header { background: #000; color: white; padding: 40px 20px; text-align: center; }
-        .logo { font-size: 26px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
-        .form-content { padding: 30px 20px; }
-        .input-group { margin-bottom: 25px; }
-        label { display: block; font-size: 12px; font-weight: 700; color: #777; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; }
+        body {
+            font-family: 'Fira GO', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; text-align: center; }
+        .intro-text {
+            background: #eef2f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            border-left: 5px solid #3498db;
+        }
+        /* სარჩევი */
+        .toc {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .toc a {
+            text-decoration: none;
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .toc a:hover { background: #2980b9; }
+
+        .question-group {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            background: #fafafa;
+            scroll-margin-top: 20px;
+        }
+        .question-group h3 {
+            margin-top: 0;
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        label { display: block; margin-top: 15px; font-weight: bold; margin-bottom: 5px; }
         input[type="text"], textarea {
-            width: 100%; padding: 16px; border: 2px solid #f0f0f0; border-radius: 15px; font-size: 16px; 
-            font-family: 'Fira GO', sans-serif; background: #fdfdfd; transition: all 0.3s;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: 'Fira GO', sans-serif;
+            font-size: 14px;
         }
-        input:focus, textarea:focus { border-color: #000; background: #fff; outline: none; }
-        textarea { min-height: 110px; resize: none; }
+        textarea { height: 100px; resize: vertical; }
         
-        .submit-btn { 
-            width: 100%; padding: 22px; background: #000; color: #fff; border: none; 
-            border-radius: 18px; font-size: 16px; font-weight: 700; cursor: pointer; 
-            text-transform: uppercase; letter-spacing: 2px; margin-top: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
         }
-        .submit-btn:active { transform: scale(0.98); }
+        button:hover { background-color: #219150; }
+        button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
         
-        .section-divider { 
-            margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #eee;
-            font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase;
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            display: none;
+            border-radius: 6px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <div class="logo">PITAGORA</div>
-        <p style="font-size: 10px; opacity: 0.5; margin-top: 5px; letter-spacing: 2px;">INTERVIEW FORM</p>
+    <h1>PITAGORA.GE</h1>
+    
+    <div class="intro-text">
+        <strong>გამარჯობა, გიგზავნით კითხვარს.</strong><br>
+        თავიდან მოგვიყევით თქვენზე, საქმიანობაზე და შემდგომ შეავსეთ კითხვარი. ასევე, 3-5 ფოტოც რომ გამოგვიგზავნოთ (მეილზე ან მესენჯერში), ჩავსვამთ ინტერვიუში.<br><br>
+        <em>ქვემოთ დაყოფილია რვა ხუთეულად. გთხოვთ, აარჩიოთ ჯამში 4-5 კითხვა და გასცეთ პასუხი.</em>
     </div>
 
-    <form action="https://script.google.com/macros/s/AKfycbyJtEi30LrAp3oy6LHZa7gmOVRbmesCR62RtKlaFWL4jCvB2pGLfySXVrvQaGLb3LtsmQ/exec" method="POST" id="mainForm">
-        <div class="form-content">
-            
-            <div class="input-group">
-                <label>ავტორი & ბრენდი</label>
-                <input type="text" name="სახელი_ბრენდი" required placeholder="მაგ: ნინო • Handmade">
-            </div>
+    <div class="toc">
+        <a href="#group1">I ხუთეული</a>
+        <a href="#group2">II ხუთეული</a>
+        <a href="#group3">III ხუთეული</a>
+        <a href="#group4">IV ხუთეული</a>
+        <a href="#group5">V ხუთეული</a>
+        <a href="#group6">VI ხუთეული</a>
+        <a href="#group7">VII ხუთეული</a>
+        <a href="#group8">VIII ხუთეული</a>
+    </div>
 
-            <div class="input-group">
-                <label>ზოგადი ისტორია</label>
-                <textarea name="მთავარი_ისტორია" placeholder="მოგვიყევით მოკლედ თქვენს შესახებ..."></textarea>
-            </div>
+    <form id="interviewForm">
+        <label>სახელი და გვარი / ბრენდის სახელი *</label>
+        <input type="text" name="სახელი_გვარი" required placeholder="მაგ: გიორგი - პიტაგორა">
 
-            <div class="section-divider">კითხვების სერია</div>
+        <label>მოგვიყევით თქვენზე და თქვენს საქმიანობაზე *</label>
+        <textarea name="შესავალი" required placeholder="მოკლე ინფორმაცია..."></textarea>
 
-            <div class="input-group">
-                <label>როგორ გაჩნდა იდეა?</label>
-                <textarea name="Q1"></textarea>
-            </div>
-
-            <div class="input-group">
-                <label>მოგვიყევით პირველ ნაბიჯებზე</label>
-                <textarea name="Q2"></textarea>
-            </div>
-
-            <div class="input-group">
-                <label>რა პროდუქციას სთავაზობთ მომხმარებელს?</label>
-                <textarea name="Q3"></textarea>
-            </div>
-
-            <div class="input-group">
-                <label>წარსულში თუ გქონდათ გამოცდილება?</label>
-                <textarea name="Q4"></textarea>
-            </div>
-
-            <div class="input-group">
-                <label>რა გამოწვევების წინაშე დგახართ?</label>
-                <textarea name="Q5"></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn" id="sbtn">ინტერვიუს დასრულება 🚀</button>
+        <div id="group1" class="question-group">
+            <h3>I ხუთეული</h3>
+            <label>როგორ გაჩნდა იდეა?</label>
+            <textarea name="როგორ გაჩნდა იდეა?"></textarea>
+            <label>მოგვიყევით პირველ ნაბიჯებზე</label>
+            <textarea name="მოგვიყევით პირველ ნაბიჯებზე"></textarea>
+            <label>რა პროდუქციას სთავაზობთ მომხმარებელს?</label>
+            <textarea name="რა პროდუქციას სთავაზობთ მომხმარებელს?"></textarea>
+            <label>წარსულში თუ გქონდათ გამოცდილება, რაც დაგეხმარათ?</label>
+            <textarea name="წარსულში თუ გქონდათ გამოცდილება, რაც დაგეხმარათ?"></textarea>
+            <label>რა გამოწვევების წინაშე დგახართ?</label>
+            <textarea name="რა გამოწვევების წინაშე დგახართ?"></textarea>
         </div>
+
+        <div id="group2" class="question-group">
+            <h3>II ხუთეული</h3>
+            <label>სად შეისწავლეთ საქმიანობა?</label>
+            <textarea name="სად შეისწავლეთ საქმიანობა?"></textarea>
+            <label>როგორ მზადდება თქვენი პროდუქტი?</label>
+            <textarea name="როგორ მზადდება თქვენი პროდუქტი?"></textarea>
+            <label>გქონდათ ბიზნეს გეგმა, როცა იწყებდით?</label>
+            <textarea name="გქონდათ ბიზნეს გეგმა, როცა იწყებდით?"></textarea>
+            <label>გაგვიზიარეთ სამომავლო გეგმები</label>
+            <textarea name="გაგვიზიარეთ სამომავლო გეგმები (II ხუთეული)"></textarea>
+        </div>
+
+        <div id="group3" class="question-group">
+            <h3>III ხუთეული</h3>
+            <label>რა ფაქტორებმა იქონია გავლენა, რომ დაგეწყოთ?</label>
+            <textarea name="რა ფაქტორებმა იქონია გავლენა, რომ დაგეწყოთ?"></textarea>
+            <label>მოგვიყევით პირველი ნაბიჯების შესახებ (III ხუთეული)</label>
+            <textarea name="მოგვიყევით პირველი ნაბიჯების შესახებ (III ხუთეული)"></textarea>
+            <label>სად ან როგორ გიკავშირდებათ მომხმარებელი?</label>
+            <textarea name="სად ან როგორ გიკავშირდებათ მომხმარებელი?"></textarea>
+            <label>რა საშუალებებს იყენებთ ახალი მომხმარებლებისთვის?</label>
+            <textarea name="რა საშუალებებს იყენებთ ახალი მომხმარებლებისთვის?"></textarea>
+            <label>ყველაზე დიდი იმედგაცრუება</label>
+            <textarea name="ყველაზე დიდი იმედგაცრუება"></textarea>
+        </div>
+
+        <div id="group4" class="question-group">
+            <h3>IV ხუთეული</h3>
+            <label>ერთი რამ, რასაც შეცვლიდით განვლილ გზაზე</label>
+            <textarea name="ერთი რამ, რასაც შეცვლიდით განვლილ გზაზე"></textarea>
+            <label>განათლება გქონდათ ამ სფეროში?</label>
+            <textarea name="განათლება გქონდათ ამ სფეროში?"></textarea>
+            <label>რა შემაფერხებელი გარემოებები გქონდათ?</label>
+            <textarea name="რა შემაფერხებელი გარემოებები გქონდათ?"></textarea>
+            <label>როგორია თქვენი სამომავლო გეგმები?</label>
+            <textarea name="როგორია თქვენი სამომავლო გეგმები? (IV ხუთეული)"></textarea>
+            <label>რამდენ დროს უთმობთ თქვენს საქმიანობას?</label>
+            <textarea name="რამდენ დროს უთმობთ თქვენს საქმიანობას?"></textarea>
+        </div>
+
+        <div id="group5" class="question-group">
+            <h3>V ხუთეული</h3>
+            <label>რამ შთაგაგონათ საქმიანობის დაწყება?</label>
+            <textarea name="რამ შთაგაგონათ საქმიანობის დაწყება?"></textarea>
+            <label>რა არის ძირითადი პროდუქტები/სერვისები?</label>
+            <textarea name="რა არის ძირითადი პროდუქტები/სერვისები?"></textarea>
+            <label>რა მახასიათებლით გამოირჩევით კონკურენტებისგან?</label>
+            <textarea name="რა მახასიათებლით გამოირჩევით კონკურენტებისგან?"></textarea>
+            <label>რა არის ყველაზე დიდი სირთულე?</label>
+            <textarea name="რა არის ყველაზე დიდი სირთულე?"></textarea>
+            <label>რა საშუალებებს იყენებთ ცნობადობისთვის?</label>
+            <textarea name="რა საშუალებებს იყენებთ ცნობადობისთვის?"></textarea>
+        </div>
+
+        <div id="group6" class="question-group">
+            <h3>VI ხუთეული</h3>
+            <label>როგორია მომხმარებლის დამოკიდებულება?</label>
+            <textarea name="როგორია მომხმარებლის დამოკიდებულება?"></textarea>
+            <label>რა როლს თამაშობს ტექნოლოგია თქვენს საქმეში?</label>
+            <textarea name="რა როლს თამაშობს ტექნოლოგია თქვენს საქმეში?"></textarea>
+            <label>თანამშრომლობთ სხვა კომპანიებთან?</label>
+            <textarea name="თანამშრომლობთ სხვა კომპანიებთან?"></textarea>
+            <label>რამდენად შრომატევადია თქვენი საქმიანობა?</label>
+            <textarea name="რამდენად შრომატევადია თქვენი საქმიანობა?"></textarea>
+            <label>რა არის ძირითადი გაკვეთილები, რაც ისწავლეთ?</label>
+            <textarea name="რა არის ძირითადი გაკვეთილები, რაც ისწავლეთ?"></textarea>
+        </div>
+
+        <div id="group7" class="question-group">
+            <h3>VII ხუთეული</h3>
+            <label>როგორ ანაწილებთ პრიორიტეტებს?</label>
+            <textarea name="როგორ ანაწილებთ პრიორიტეტებს?"></textarea>
+            <label>როგორ გაუმკლავდით სირთულეებს?</label>
+            <textarea name="როგორ გაუმკლავდით სირთულეებს?"></textarea>
+            <label>რა არის თქვენი სამომავლო მიზნები?</label>
+            <textarea name="რა არის თქვენი სამომავლო მიზნები?"></textarea>
+            <label>სოციალური პასუხისმგებლობის ინიციატივები</label>
+            <textarea name="სოციალური პასუხისმგებლობის ინიციატივები"></textarea>
+            <label>რჩევა დამწყებ მეწარმეებს</label>
+            <textarea name="რჩევა დამწყებ მეწარმეებს"></textarea>
+        </div>
+
+        <div id="group8" class="question-group">
+            <h3>VIII ხუთეული</h3>
+            <label>როგორ რჩებით მოტივირებული?</label>
+            <textarea name="როგორ რჩებით მოტივირებული?"></textarea>
+            <label>როგორ ინარჩუნებთ ბალანსს სამუშაოსა და ცხოვრებას შორის?</label>
+            <textarea name="როგორ ინარჩუნებთ ბალანსს სამუშაოსა და ცხოვრებას შორის?"></textarea>
+            <label>რას ფიქრობდა ოჯახი თქვენს იდეაზე?</label>
+            <textarea name="რას ფიქრობდა ოჯახი თქვენს იდეაზე?"></textarea>
+            <label>როგორი გამოხმაურება გაქვთ მომხმარებლისგან?</label>
+            <textarea name="როგორი გამოხმაურება გაქვთ მომხმარებლისგან?"></textarea>
+            <label>რა განასხვავებს თქვენს ბიზნესს და უწყობს ხელს წარმატებას?</label>
+            <textarea name="რა განასხვავებს თქვენს ბიზნესს?"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">პასუხების გაგზავნა</button>
     </form>
+    <div id="status"></div>
 </div>
 
 <script>
-    // მხოლოდ ვიზუალური ეფექტისთვის, რომ მიხვდნენ, რომ გაიგზავნა
-    document.getElementById('mainForm').onsubmit = function() {
-        document.getElementById('sbtn').innerText = "იგზავნება... ✅";
-        document.getElementById('sbtn').style.background = "#333";
-    };
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyJtEi30LrAp3oy6LHZa7gmOVRbmesCR62RtKlaFWL4jCvB2pGLfySXVrvQaGLb3LtsmQ/exec';
+    const form = document.getElementById('interviewForm');
+    const status = document.getElementById('status');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = 'იგზავნება...';
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                status.style.display = 'block';
+                status.style.backgroundColor = '#d4edda';
+                status.style.color = '#155724';
+                status.innerText = 'მადლობა! თქვენი პასუხები წარმატებით გაიგზავნა.';
+                form.reset();
+                btn.disabled = false;
+                btn.innerText = 'პასუხების გაგზავნა';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+            .catch(error => {
+                status.style.display = 'block';
+                status.style.backgroundColor = '#f8d7da';
+                status.style.color = '#721c24';
+                status.innerText = 'შეცდომა! გთხოვთ სცადოთ თავიდან.';
+                btn.disabled = false;
+                btn.innerText = 'პასუხების გაგზავნა';
+            });
+    });
 </script>
 
 </body>
